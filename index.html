@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Daily To-Do</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Quotes Section -->
+        <header class="quote-container">
+            <h2 class="quote-text" id="daily-quote">"Focus on being productive instead of busy."</h2>
+            <p class="quote-author" id="quote-author">- Tim Ferriss</p>
+        </header>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <div class="progress-header">
+                <h3>Daily Progress</h3>
+                <span id="completion-percentage">0%</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="progressChart"></canvas>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="progress-section">
+            <div class="progress-header">
+                <h3>Last 7 Days</h3>
+            </div>
+            <div class="chart-container" style="height: 150px;">
+                <canvas id="historyChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Tasks Section -->
+        <main class="tasks-section">
+            <div class="task-input-container">
+                <input type="text" id="new-task-input" placeholder="What needs to be done today?" autocomplete="off">
+                <button id="add-task-btn" aria-label="Add task">
+                    <i data-lucide="plus"></i>
+                </button>
+            </div>
+
+            <ul id="task-list" class="task-list">
+                <!-- Task items will be dynamically injected here -->
+            </ul>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
